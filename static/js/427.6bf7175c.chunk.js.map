@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/427.6bf7175c.chunk.js","mappings":"2JAMA,UANc,WACV,OACI,cAAGA,MAAO,CAACC,UAAW,UAAtB,mBAEP,C","sources":["pages/Login/Login.jsx"],"sourcesContent":["const Login = () => {\n    return (\n        <p style={{textAlign: \"center\"}}>Login!</p>\n    )\n}\n\nexport default Login;"],"names":["style","textAlign"],"sourceRoot":""}

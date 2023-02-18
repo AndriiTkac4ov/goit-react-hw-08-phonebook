@@ -4,7 +4,11 @@ import ContactList from "components/ContactList/ContactList";
 import Loader from "components/Loader/Loader";
 import { selectIsLoading} from "redux/selectors";
 import { useSelector } from "react-redux";
-import { ContactsGroup, AppTitle, ContactsTitle } from "./Contacts.styled";
+import {
+    ContactsGroup,
+    AppTitle,
+    ContactsTitle,
+} from "./Contacts.styled";
 
 const Contacts = () => {
     const isLoading = useSelector(selectIsLoading);

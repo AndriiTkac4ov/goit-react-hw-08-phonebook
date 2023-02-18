@@ -23,18 +23,18 @@ export const NotFoundLink = styled(Link)`
     display: inline-block;
     text-decoration: none;
     padding: 8px;
-
-    color: #713333;
-    background-color: #fff4e0;
+    color: honeydew;
+    background-color: burlywood;
     border: 1px solid;
-    border-color: #713333;
+    border-color: chocolate;
     border-radius: 6px;
     cursor: pointer;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover,
     &:focus {
-        color: #fff4e0;
-        background-color: #1172c0;
-        border-color: #1172c0;
+        background-color: chocolate;
+        color: springgreen;
+        border-color: springgreen;
+        transform: scale(1.1);
     }
 `;

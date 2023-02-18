@@ -1,6 +1,6 @@
 const Register = () => {
     return (
-        <p>Register!!!</p>
+        <p style={{textAlign: "center"}}>Register!</p>
     )
 }
 

@@ -4,7 +4,7 @@ import {
     NotFoundText,
     NotFoundLink,
 } from './NotFound.styled';
-import image from './not-found.gif';
+import image from './go-away-from-this-page.gif';
 
 function NotFound() {
     return (

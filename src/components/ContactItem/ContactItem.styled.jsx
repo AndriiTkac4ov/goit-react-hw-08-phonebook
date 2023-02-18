@@ -26,12 +26,13 @@ export const ButtonDeleting = styled.button`
     cursor: pointer;
     background: burlywood;
     color: honeydew;
-    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out;
+    transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out, border-color 0.25s ease-in-out, transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover,
     &:focus {
         background: chocolate;
-        color: palegreen;
-        border: 1px solid palegreen;
+        color: springgreen;
+        border: 1px solid springgreen;
+        transform: scale(1.1);
     }
 `;

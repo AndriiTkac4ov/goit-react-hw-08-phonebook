@@ -1,6 +1,6 @@
 const Login = () => {
     return (
-        <p>Login!!!</p>
+        <p style={{textAlign: "center"}}>Login!</p>
     )
 }
 

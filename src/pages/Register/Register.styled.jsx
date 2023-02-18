@@ -44,6 +44,12 @@ export const InputField = styled.input`
 `;
 
 export const ButtonAdding = styled.button`
+/* toggle password */
+    /* display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: ${props => props.theme.spacing(2)}; */
+/* toggle password */
     padding: 8px 24px;
     font-size: ${props => props.theme.spacing(2)};
     font-weight: 700;

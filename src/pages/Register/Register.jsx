@@ -24,6 +24,7 @@ const initialState = {
 const Register = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [values, setValues] = useState(initialState);
+    // const [isPassword, setIsPassword] = useState(true);
 
     const handleInputChange = (event) => {
         const { name, value } = event.currentTarget;
@@ -65,6 +66,7 @@ const Register = () => {
                         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                         required
                         autoComplete="off"
+                        placeholder="Name"
                         value={values.name}
                         onChange={handleInputChange}
                     />
@@ -79,6 +81,7 @@ const Register = () => {
                         // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         autoComplete="off"
+                        placeholder="name@email.com"
                         value={values.email}
                         onChange={handleInputChange}
                     />
@@ -87,17 +90,20 @@ const Register = () => {
                 <LabelField>
                     Password
                     <InputField
+                        // type={isPassword ? "password" : "text"}
                         type="password"
                         name="password"
                         // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                         // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         autoComplete="off"
+                        placeholder="Name123456"
                         value={values.password}
                         onChange={handleInputChange}
                     />
                 </LabelField>
 
+                {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
                 <ButtonAdding type="submit">Sign In</ButtonAdding>
             </Form>
         </RegisterGroup>

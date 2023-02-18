@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/643.d10e6c83.chunk.js","mappings":"2JAMA,UANiB,WACb,OACI,cAAGA,MAAO,CAACC,UAAW,UAAtB,sBAEP,C","sources":["pages/Register/Register.jsx"],"sourcesContent":["const Register = () => {\n    return (\n        <p style={{textAlign: \"center\"}}>Register!</p>\n    )\n}\n\nexport default Register;"],"names":["style","textAlign"],"sourceRoot":""}

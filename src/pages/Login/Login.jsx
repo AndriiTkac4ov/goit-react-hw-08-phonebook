@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { authLoginThunk } from "redux/auth/auth.thunk";
 import { selectAuthStatus } from "redux/auth/auth.selector";
 import { toast } from "react-toastify";
@@ -26,6 +27,8 @@ const LoginPage = () => {
     const dispatch = useDispatch();
     const status = useSelector(selectAuthStatus);
 
+    const navigate = useNavigate();
+
     const handleInputChange = (event) => {
         const { name, value } = event.currentTarget;
         setValues(prev => ({...prev, [name]: value}))
@@ -42,6 +45,7 @@ const LoginPage = () => {
             const data = await dispatch(authLoginThunk(values)).unwrap();
             console.log(data);
             toast.success('Finally! We missed you!');
+            navigate('/contacts', { replace: true });
         } catch (error) {
             console.log(error);
             toast.error('Do not hurry! Something is wrong with your email or password!');
@@ -54,7 +58,7 @@ const LoginPage = () => {
         <RegisterGroup>
             {status === 'loading' && <Loader />}
 
-            <RegisterTitle>Please Login</RegisterTitle>
+            <RegisterTitle>Please Log in Your Phonebook</RegisterTitle>
 
             <Form onSubmit={handleSubmit}>
                 <LabelField>
@@ -89,7 +93,7 @@ const LoginPage = () => {
                 </LabelField>
 
                 {/* <ButtonAdding type="button" onClick={() => setIsPassword(prev => !prev)}>Show Password</ButtonAdding> */}
-                <ButtonAdding type="submit">Login</ButtonAdding>
+                <ButtonAdding type="submit">Log in</ButtonAdding>
             </Form>
         </RegisterGroup>
     )

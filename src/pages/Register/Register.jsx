@@ -1,4 +1,4 @@
-import axios from "axios";
+import { publicApi } from "../../http/http";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import Loader from "components/Loader/Loader";
@@ -34,7 +34,7 @@ const RegisterPage = () => {
 
         try {
             setIsLoading(true);
-            await axios.post('https://connections-api.herokuapp.com/users/signup', values);
+            await publicApi.post('/users/signup', values);
             setIsLoading(false);
             toast.success('Congratulate! You have just become the owner of Phonebook!');
         } catch (error) {
@@ -49,7 +49,7 @@ const RegisterPage = () => {
         <RegisterGroup>
             {isLoading && <Loader />}
 
-            <RegisterTitle>Please Sign In Your Phonebook</RegisterTitle>
+            <RegisterTitle>Please Sign in Your Phonebook</RegisterTitle>
 
             <Form onSubmit={handleSubmit}>
                 <LabelField>
@@ -72,8 +72,6 @@ const RegisterPage = () => {
                     <InputField
                         type="email"
                         name="email"
-                        // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                        // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         autoComplete="off"
                         placeholder="name@email.com"
@@ -88,8 +86,6 @@ const RegisterPage = () => {
                         // type={isPassword ? "password" : "text"}
                         type="password"
                         name="password"
-                        // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                        // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         autoComplete="off"
                         placeholder="Name123456"

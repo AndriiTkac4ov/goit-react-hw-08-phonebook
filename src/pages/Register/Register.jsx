@@ -1,10 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
 import { toast } from "react-toastify";
-// import { useDispatch, useSelector } from "react-redux";
-// import { nanoid } from "nanoid";
-// import { selectContacts } from "redux/selectors";
-// import * as contactsOperations from "redux/contacts/contactsOperations";
 import Loader from "components/Loader/Loader";
 import {
     RegisterGroup,
@@ -21,14 +17,13 @@ const initialState = {
     password: '',
 }
 
-const Register = () => {
+const RegisterPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [values, setValues] = useState(initialState);
     // const [isPassword, setIsPassword] = useState(true);
 
     const handleInputChange = (event) => {
         const { name, value } = event.currentTarget;
-
         setValues(prev => ({...prev, [name]: value}))
     }
 
@@ -110,4 +105,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default RegisterPage;

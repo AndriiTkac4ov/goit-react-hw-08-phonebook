@@ -10,7 +10,7 @@ import {
     ContactsTitle,
 } from "./Contacts.styled";
 
-const Contacts = () => {
+const ContactsPage = () => {
     const isLoading = useSelector(selectIsLoading);
 
     return (
@@ -25,4 +25,4 @@ const Contacts = () => {
     )
 }
 
-export default Contacts;
+export default ContactsPage;

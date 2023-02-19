@@ -6,7 +6,7 @@ import {
 } from './NotFound.styled';
 import image from './go-away-from-this-page.gif';
 
-function NotFound() {
+function NotFoundPage() {
     return (
         <NotFoundSection>
             <NotFoundImg src={image} alt="Wrong page in URL adress" />
@@ -16,4 +16,4 @@ function NotFound() {
     )
 }
 
-export default NotFound;
+export default NotFoundPage;

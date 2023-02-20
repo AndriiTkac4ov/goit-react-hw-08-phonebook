@@ -2,6 +2,11 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { authLogoutThunk } from 'redux/auth/auth.thunk';
 import { toast } from "react-toastify";
+import {
+    ProfileMenu,
+    ProfileEmail,
+    LogOutButton,
+} from './UserMenu.styled';
 
 const UserMenu = ({ mail }) => {
     const dispatch = useDispatch();
@@ -17,10 +22,10 @@ const UserMenu = ({ mail }) => {
     }
 
     return (
-        <div>
-            <p>{mail}</p>
-            <button type="button" onClick={handleLogOut}>Log out</button>
-        </div>
+        <ProfileMenu>
+            <ProfileEmail>{mail}</ProfileEmail>
+            <LogOutButton type="button" onClick={handleLogOut}>Log out</LogOutButton>
+        </ProfileMenu>
     )
 }
 

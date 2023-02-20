@@ -5,7 +5,7 @@ export const PhonebookHeader = styled.header`
     left: 0;
     position: sticky;
     z-index: 1100;
-    min-height: ${props => props.theme.spacing(4)};
+    min-height: ${props => props.theme.spacing(4.5)};
     padding: 12px 84px;
     color: #ffffff;
     

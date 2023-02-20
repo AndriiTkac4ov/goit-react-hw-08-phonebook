@@ -66,7 +66,7 @@ const LoginPage = () => {
                         type="email"
                         name="email"
                         required
-                        autoComplete="off"
+                        autoComplete="on"
                         placeholder="name@email.com"
                         value={values.email}
                         onChange={handleInputChange}

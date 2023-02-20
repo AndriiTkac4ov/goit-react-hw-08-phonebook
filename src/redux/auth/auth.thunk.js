@@ -9,5 +9,6 @@ export const authLoginThunk = createAsyncThunk('login', async (values) => {
 });
 
 export const authLogoutThunk = createAsyncThunk('logout', async () => {
-    await privateApi.post('/users/logout');
+    const { data } = await privateApi.post('/users/logout');
+    token.remove(data.token);
 });

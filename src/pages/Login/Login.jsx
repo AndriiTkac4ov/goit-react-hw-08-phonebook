@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { authLoginThunk } from "redux/auth/auth.thunk";
 import { selectAuthStatus } from "redux/auth/auth.selector";
@@ -24,7 +23,6 @@ const LoginPage = () => {
     const [values, setValues] = useState(initialState);
     // const [isPassword, setIsPassword] = useState(true);
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const status = useSelector(selectAuthStatus);
 
@@ -41,13 +39,11 @@ const LoginPage = () => {
     // ======
 
         try {
-            const data = await dispatch(authLoginThunk(values)).unwrap();
-            console.log(data);
-            navigate('/contacts', { replace: true });
-            toast.success('Finally! We missed you!');
+            await dispatch(authLoginThunk(values)).unwrap();
+            toast.success('Finally! We missed you.');
         } catch (error) {
             console.log(error);
-            toast.error('Do not hurry! Something is wrong with your email or password!');
+            toast.error('Do not hurry! Something is wrong with your email or password.');
         }
 
         setValues(initialState);

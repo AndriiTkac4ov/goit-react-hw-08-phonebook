@@ -1,5 +1,7 @@
 import { publicApi } from "../../http/http";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { authLoginThunk } from "redux/auth/auth.thunk";
 import { toast } from "react-toastify";
 import Loader from "components/Loader/Loader";
 import {
@@ -18,6 +20,7 @@ const initialState = {
 }
 
 const RegisterPage = () => {
+    const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
     const [values, setValues] = useState(initialState);
     // const [isPassword, setIsPassword] = useState(true);
@@ -35,6 +38,7 @@ const RegisterPage = () => {
         try {
             setIsLoading(true);
             await publicApi.post('/users/signup', values);
+            await dispatch(authLoginThunk({ email: values.email, password: values.password })).unwrap();
             setIsLoading(false);
             toast.success('Congratulate! You have just become the owner of Phonebook!');
         } catch (error) {

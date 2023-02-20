@@ -1,4 +1,4 @@
-import { publicApi, token } from "http/http";
+import { publicApi, privateApi, token } from "http/http";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const authLoginThunk = createAsyncThunk('login', async (values) => {
@@ -9,6 +9,5 @@ export const authLoginThunk = createAsyncThunk('login', async (values) => {
 });
 
 export const authLogoutThunk = createAsyncThunk('logout', async () => {
-    await publicApi.post('/users/logout');
-    token.remove();
+    await privateApi.post('/users/logout');
 });

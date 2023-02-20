@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { authLoginThunk } from "redux/auth/auth.thunk";
 import { selectAuthStatus } from "redux/auth/auth.selector";
 import { toast } from "react-toastify";
@@ -24,10 +24,9 @@ const LoginPage = () => {
     const [values, setValues] = useState(initialState);
     // const [isPassword, setIsPassword] = useState(true);
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const status = useSelector(selectAuthStatus);
-
-    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         const { name, value } = event.currentTarget;
@@ -44,8 +43,8 @@ const LoginPage = () => {
         try {
             const data = await dispatch(authLoginThunk(values)).unwrap();
             console.log(data);
-            toast.success('Finally! We missed you!');
             navigate('/contacts', { replace: true });
+            toast.success('Finally! We missed you!');
         } catch (error) {
             console.log(error);
             toast.error('Do not hurry! Something is wrong with your email or password!');
@@ -66,8 +65,6 @@ const LoginPage = () => {
                     <InputField
                         type="email"
                         name="email"
-                        // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                        // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         autoComplete="off"
                         placeholder="name@email.com"
@@ -82,8 +79,6 @@ const LoginPage = () => {
                         // type={isPassword ? "password" : "text"}
                         type="password"
                         name="password"
-                        // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-                        // title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                         required
                         autoComplete="off"
                         placeholder="Name123456"

@@ -7,9 +7,6 @@ import storage from "redux-persist/lib/storage";
 const authSlice = createSlice({
     name: 'auth',
     initialState: authInitState,
-    // reducers: {
-    //     logoutAction: () => authInitState,
-    // },
     extraReducers: builder => {
         builder
         //Log In
@@ -43,5 +40,4 @@ const persistConfig = {
     whitelist: ['data'],
 }
 
-// export const { logoutAction } = authSlice.actions;
 export const authReducer = persistReducer(persistConfig, authSlice.reducer);

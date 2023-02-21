@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { profileInitState } from "./profile.init-state";
 import { getProfileThunk } from "./profile.thunk";
+import { authLogoutThunk } from "../auth/auth.thunk";
 
 const profileSlice = createSlice({
     name: 'profile',
@@ -16,6 +17,10 @@ const profileSlice = createSlice({
             })
             .addCase(getProfileThunk.rejected, state => {
                 state.status = 'rejected';
+            })
+            .addCase(authLogoutThunk.fulfilled, state => {
+                state.status = 'fulfilled';
+                state.data = null;
             })
     }
 })

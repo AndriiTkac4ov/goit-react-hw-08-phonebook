@@ -33,7 +33,7 @@ const ContactForm = () => {
         const newContact = {
             id: nanoid(),
             name,
-            phone: number,
+            number,
         };
 
         const isContactNameInList = contactName => {
